@@ -11,6 +11,8 @@ import { createRoad } from "./world/road.js";
 import { createPlayer } from "./entities/player.js";
 
 import { createInput } from "./systems/input.js";
+import { setupJoystick } from "./core/joystick.js";
+
 import { createFollowCamera } from "./systems/followCamera.js";
 import { createCharacterController } from "./systems/characterController.js";
 
@@ -49,6 +51,8 @@ scene.add(player);
 
 // Systems
 const input = createInput();
+setupJoystick(input);
+
 const controller = createCharacterController(player, input);
 
 const clock = new THREE.Clock();
